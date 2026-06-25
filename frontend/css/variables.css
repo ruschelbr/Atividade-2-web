@@ -1,0 +1,32 @@
+:root {
+  --color-bg: #0e1812;
+  --color-bg-soft: #142019;
+  --color-bg-card: #16231b;
+  --color-border: #2a3d2f;
+  --color-border-soft: rgba(201, 168, 110, 0.25);
+
+  --color-text: #ece4d3;
+  --color-text-muted: rgba(236, 228, 211, 0.62);
+  --color-text-faint: rgba(236, 228, 211, 0.4);
+
+  --color-accent: #c98a4b;
+  --color-accent-strong: #e0a868;
+  --color-accent-soft: rgba(201, 138, 75, 0.14);
+
+  --color-danger: #b1503f;
+  --color-danger-strong: #c96651;
+  --color-success: #6f9b6e;
+
+  --font-base: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", "Segoe UI",
+    sans-serif;
+
+  --space-xs: 8px;
+  --space-sm: 14px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 80px;
+
+  --radius: 3px;
+  --max-width: 1080px;
+  --transition: 0.2s ease;
+}
