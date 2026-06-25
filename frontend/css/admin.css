@@ -1,0 +1,182 @@
+.admin-main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.admin-block {
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.admin-block .section-tag {
+  margin: 0 0 var(--space-xs);
+}
+
+.admin-block h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.potion-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  max-width: 720px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  grid-column: span 2;
+}
+
+.campo--preco {
+  grid-column: span 1;
+}
+
+.campo label {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.campo input,
+.campo textarea {
+  font-family: var(--font-base);
+  font-size: 14px;
+  color: var(--color-text);
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  border-color: var(--color-accent);
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.campo--acoes {
+  grid-column: span 2;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.mensagem-form {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.mensagem-form--sucesso {
+  color: var(--color-success);
+}
+
+.mensagem-form--erro {
+  color: var(--color-danger-strong);
+}
+
+.admin-potion-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.admin-potion-row {
+  display: grid;
+  grid-template-columns: 56px 1fr auto auto;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.admin-potion-row img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background-color: var(--color-bg-soft);
+}
+
+.admin-potion-info h4 {
+  margin: 0 0 2px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.admin-potion-info p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  max-width: 460px;
+}
+
+.admin-potion-price {
+  font-size: 13px;
+  color: var(--color-accent-strong);
+  white-space: nowrap;
+}
+
+.botao--remover {
+  background-color: transparent;
+  border: 1px solid var(--color-danger);
+  color: var(--color-danger-strong);
+}
+
+.botao--remover:hover {
+  background-color: var(--color-danger);
+  color: var(--color-text);
+}
+
+.botao--remover:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 700px) {
+  .potion-form {
+    grid-template-columns: 1fr;
+  }
+
+  .campo,
+  .campo--preco,
+  .campo--acoes {
+    grid-column: span 1;
+  }
+
+  .admin-potion-row {
+    grid-template-columns: 48px 1fr;
+    grid-template-areas:
+      "img info"
+      "price botao";
+  }
+
+  .admin-potion-row img {
+    grid-area: img;
+    width: 48px;
+    height: 48px;
+  }
+
+  .admin-potion-row .admin-potion-info {
+    grid-area: info;
+  }
+
+  .admin-potion-row .admin-potion-price {
+    grid-area: price;
+  }
+
+  .admin-potion-row .botao--remover {
+    grid-area: botao;
+    justify-self: start;
+  }
+}

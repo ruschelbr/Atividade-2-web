@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administração — Poções &amp; Soluções</title>
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+
+  <header class="topbar">
+    <a class="brand" href="admin.html">Poções <span>&amp;</span> Soluções</a>
+    <nav class="topnav">
+      <span class="topnav-label">Painel da loja</span>
+      <a href="index.html">Ver loja ↗</a>
+    </nav>
+  </header>
+
+  <main class="admin-main">
+
+    <section class="admin-block">
+      <p class="section-tag">Cadastro</p>
+      <h2>Cadastrar nova poção</h2>
+
+      <form id="form-pocao" class="potion-form" novalidate>
+        <div class="campo">
+          <label for="campo-nome">Nome da poção</label>
+          <input type="text" id="campo-nome" name="name" required />
+        </div>
+
+        <div class="campo">
+          <label for="campo-descricao">Descrição</label>
+          <textarea id="campo-descricao" name="description" rows="3" required></textarea>
+        </div>
+
+        <div class="campo">
+          <label for="campo-imagem">Imagem (URL)</label>
+          <input type="url" id="campo-imagem" name="image" placeholder="https://..." required />
+        </div>
+
+        <div class="campo campo--preco">
+          <label for="campo-preco">Preço (em moedas)</label>
+          <input type="number" id="campo-preco" name="price" min="0" step="1" required />
+        </div>
+
+        <div class="campo campo--acoes">
+          <button type="submit" class="botao botao--primario">Cadastrar poção</button>
+          <span id="mensagem-form" class="mensagem-form" role="status"></span>
+        </div>
+      </form>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <section class="admin-block">
+      <p class="section-tag">Catálogo atual</p>
+      <h2>Poções cadastradas</h2>
+
+      <div id="estado-admin" class="estado-catalogo">Carregando poções…</div>
+      <div id="lista-pocoes" class="admin-potion-list" aria-live="polite"></div>
+    </section>
+
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
